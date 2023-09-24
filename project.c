@@ -149,9 +149,17 @@ void search_task(){
 }
 // comparaison et tri des titres par alpha des taches
 void insertionSort() {
-    int i, j;
+    int i, j,c;
     t_tache key;
-
+    c=0;
+    for(i=0; i < iden ;i++)
+    {
+        for(c = 0;book[i].titre[c] != '\0';c++)
+        {
+        if(book[i].titre[c] >= 'A'&& book[i].titre[c] <= 'Z')
+             book[i].titre[c] += 32;
+             }
+    }
     for (i = 1; i < iden; i++) {
         key = book[i];
         j = i - 1;
